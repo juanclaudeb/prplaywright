@@ -1,15 +1,14 @@
 import { test, expect } from '@playwright/test';
-import { describe } from 'node:test';
 import { PageManager } from './pages/pagemanager';
 
-describe('pink roccade home page verification tests', () => {
-
+test.describe('pink roccade home page verification tests', () => {
+    
     test.beforeEach(async ({ page }) => {       
         const pm = new PageManager(page);
         
         await pm.onPrHomePage().goToPinkRoccadeHomepage();
 
-        if ( await pm.onPrHomePage().verifyNietAkkoordButton()) {
+        if (await pm.onPrHomePage().verifyNietAkkoordButton()) {
             await pm.onPrHomePage().clickNietAkkoordButton();
         }
     });
