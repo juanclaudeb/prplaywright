@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
@@ -19,6 +24,12 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+    - name: Build test report
+      uses: simple-elf/allure-report-action@v1.7
+      if: always()
+      with:
+        allure_history: allure-history
+        allure_results: allure-results
     - uses: actions/upload-artifact@v4
       if: always()
       with:
