@@ -8,7 +8,7 @@ test.describe('pink roccade home page verification tests', () => {
         
         await pm.onPrHomePage().goToPinkRoccadeHomepage();
 
-        if (await pm.onPrHomePage().verifyNietAkkoordButton()) {
+        if (await pm.onPrHomePage().verifyNietAkkoordButtonIsVisible()) {
             await pm.onPrHomePage().clickNietAkkoordButton();
         }
     });

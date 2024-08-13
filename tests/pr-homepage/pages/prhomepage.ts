@@ -17,7 +17,7 @@ export class PRHomePage extends HelperBase {
         await this.page.goto('https://www.pinkroccadelocalgovernment.nl');
     }
 
-    async verifyNietAkkoordButton(): Promise<boolean> {
+    async verifyNietAkkoordButtonIsVisible(): Promise<boolean> {
         return await this.nietAkkoordButton.isVisible();
     }
 
