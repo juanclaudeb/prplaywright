@@ -13,6 +13,10 @@ export class PRHomePage extends HelperBase {
         this.pinkRoccadeLogo = page.getByRole('link', { name: 'Go to PinkRoccade homepage' }).first();
     }
 
+    async goToPinkRoccadeHomepage() {
+        await this.page.goto('https://www.pinkroccadelocalgovernment.nl');
+    }
+
     async verifyNietAkkoordButton(): Promise<boolean> {
         return await this.nietAkkoordButton.isVisible();
     }

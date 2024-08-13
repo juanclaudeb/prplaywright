@@ -4,10 +4,10 @@ import { PageManager } from './pages/pagemanager';
 
 describe('pink roccade home page verification tests', () => {
 
-    test.beforeEach(async ({ page }) => {
-        await page.goto('https://www.pinkroccadelocalgovernment.nl');
+    test.beforeEach(async ({ page }) => {       
+        const pm = new PageManager(page);
         
-        const pm = new PageManager(page);        
+        await pm.onPrHomePage().goToPinkRoccadeHomepage();
 
         if ( await pm.onPrHomePage().verifyNietAkkoordButton()) {
             await pm.onPrHomePage().clickNietAkkoordButton();
