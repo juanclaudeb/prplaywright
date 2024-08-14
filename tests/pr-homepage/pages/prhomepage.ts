@@ -5,12 +5,14 @@ export class PRHomePage extends HelperBase {
     readonly page: Page;
     readonly nietAkkoordButton: Locator;
     readonly pinkRoccadeLogo: Locator;
+    readonly werkenBijLink: Locator;
 
     constructor(page: Page) {
         super(page);
         this.page = page;
         this.nietAkkoordButton = page.getByRole('button', { name: 'Niet akkoord' });
         this.pinkRoccadeLogo = page.getByRole('link', { name: 'Go to PinkRoccade homepage' }).first();
+        this.werkenBijLink = page.getByRole('link', { name: 'Werken bij'});
     }
 
     async goToPinkRoccadeHomepage() {
@@ -33,6 +35,10 @@ export class PRHomePage extends HelperBase {
 
     async verifyOnseExpertiseLinkIsVisible(): Promise<boolean> {
         return await this.page.getByRole('link', { name: 'Onze expertise' }).first().isVisible();
+    }
+
+    async clickWerkenBijLink() {
+        await this.werkenBijLink.click();
     }
 
 }

@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, _baseTest } from '@playwright/test';
 import { PageManager } from './pages/pagemanager';
 
 test.describe('pink roccade home page verification tests', () => {
-    
+
     test.beforeEach(async ({ page }) => {       
         const pm = new PageManager(page);
         
