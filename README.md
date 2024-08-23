@@ -171,3 +171,18 @@ Please see the [test-cli](https://playwright.dev/docs/test-cli) for more info.
 ## Viewing the test report
 
 We are able to view the test report for a completed test run by navigating to the following file playwright-report\index.html
+
+## Project file structure
+
+```
+    tests
+    |
+    \-- cats
+    |   |
+    |   +-- catsHomeTests.spec.ts
+    \-- pages
+        |
+        +-- catsHomePage.ts
+        +-- pageManager.ts
+        +-- helperBase.ts  
+```
